@@ -14,33 +14,25 @@ It aims "the ultra shorty reference for beginners".
 
 ### ja\_JP
 
-1. Promises
+* Exists
 
-2. Write a simple code
+  `strict / warnings`
+  `Write a simple code`
+  `Variable`
+  `Meta characters`
+  `Calculation / Operator`
+  `Conditional branching / Comparison`
+  `Array and Loop`
+  `Regex`
+  `Hash`
 
-3. Variable
+* Not Yet
 
-4. Meta characters
-
-5. Math
-
-6. Conditional branching / Comparison
-
-7. Array and Loop
-
-8. Regex
-
-9. Hash
-
-10. File (Not yet)
-
-11. Subroutine (Not yet)
-
-12. Reference (Not yet)
-
-13. Namespace / OOP (Not yet)
-
-14. Ecosystem (Not yet)
+  `File`
+  `Subroutine`
+  `Reference`
+  `Namespace / OOP`
+  `Ecosystem`
 
 ### en\_US
 
