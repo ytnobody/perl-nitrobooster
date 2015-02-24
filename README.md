@@ -12,7 +12,7 @@ It aims "the ultra shorty reference for beginners".
 
 ## Language and Status
 
-### ja\_JP
+### [ja\_JP](https://github.com/ytnobody/perl-nitrobooster/blob/master/ja_JP.md)
 
 * Exists
 
