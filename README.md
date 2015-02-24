@@ -8,7 +8,7 @@ This is a memorandum for beginners in perl.
 
 It aims "the ultra shorty reference for beginners".
 
-* It not aims "comprehensive documentation".
+**It not aims "comprehensive documentation".**
 
 ## Language and Status
 
