@@ -27,10 +27,10 @@ It aims "the ultra shorty reference for beginners".
   `Hash`
   `File`
   `Subroutine`
+  `Reference`
 
 * Not Yet
 
-  `Reference`
   `Namespace / OOP`
   `Ecosystem`
 
