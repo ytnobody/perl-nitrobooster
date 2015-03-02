@@ -25,11 +25,11 @@ It aims "the ultra shorty reference for beginners".
   `Array and Loop`
   `Regex`
   `Hash`
+  `File`
+  `Subroutine`
 
 * Not Yet
 
-  `File`
-  `Subroutine`
   `Reference`
   `Namespace / OOP`
   `Ecosystem`
