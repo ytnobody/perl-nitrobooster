@@ -85,9 +85,10 @@ Roughly, a special character that does expression with backslash and alphabet.
 
 ---
 
-## メタ文字とクォート
+## metacharacters and quotation
 
-3に出てきたprintするやつで、クォートを他のに取り替えたら結構大ごとに。
+Look at an example code. 
+Replacing from double quotations to single quotations is to make confusion.
 
     print "Hello, $item world!\n";
 
@@ -97,15 +98,15 @@ Roughly, a special character that does expression with backslash and alphabet.
 
 ---
 
-## 解説
+## Why?
 
-`""`で囲った文字列に変数やメタ文字を入れた場合は、変数やメタ文字は展開されるけど、`''`で囲った文字列はそのようにはならない。
+Metacharacters is never resolved their representation in `''` syntax.
 
 ---
 
-# 5. 数値演算
+# 5. Calculation
 
-電卓の代わり。
+Use perl as a calculator.
 
     use strict;
     use warnings;
@@ -117,38 +118,37 @@ Roughly, a special character that does expression with backslash and alphabet.
     my $height = 37;
     my $triangle = ( $width * $height ) / 2;
     
-    printf "幅%dcm 高さ%dcmの三角形の面積は%0.02fcm2です\n", $width, $height, $triangle;
+    printf "The area of a triangle△ with %dcm width and %dcm height is %0.02fcm2.\n", $width, $height, $triangle;
 
 ---
 
-## 解説
+## Description
 
-* 三角形の面積 = `(幅 x 高さ)÷2` を、`$triangle`を求める式で表現。
-* `printf`命令は、最初の引数でフォーマットを指定し、`%d`とか`%s`とか`%0.03f`みたいな場所に、続きの引数を順番に当て込んで、ターミナルに出力。
-* 日本語を使っているので、`use utf8;`しています。
-* 日本語を出力するので、`binmode STDOUT, 'utf8';`します。
-
----
-
-## 数値演算子
-
-よく使うやつだけ書いてみた。
-
-* `*` 掛け算
-* `-` 引き算
-* `+` 足し算
-* `/` 割り算
-* `**` べき乗
-* `++` インクリメント
-* `--` デクリメント
-
-詳細は[このあたり](http://perldoc.jp/docs/perl/perlop.pod)を読むと良いです。
+* `printf` requires 1 or more arguments. Specify the string-format in first argument. Special strings as like '%s', '%d' or '%0.02f' in format string is become replaced by 2nd or later arguments. Then, output a string to the terminal.
+* `use utf8;` for manipulating multibyte character `△`.
+* `binmode STDOUT, 'utf8';` for output multibyte character `△`. 
 
 ---
 
-# 6. 条件分岐と比較演算
+## Calculation Operators
 
-もし＊＊が○○だったら、□□する、みたいなやつ。
+Only operator to frequent.
+
+* `*` multiplication
+* `-` subtraction
+* `+` addition
+* `/` division
+* `**` power
+* `++` increment
+* `--` decrement
+
+Please read [here](http://perldoc.perl.org/perlop.html) for more information.
+
+---
+
+# 6. Conditional forking / Comparison operators
+
+Syntax like 'If foo is 2, print "abc".'.
 
     my $item = 'perl';
     if ( $item eq 'perl' ) {
@@ -163,53 +163,50 @@ Roughly, a special character that does expression with backslash and alphabet.
 
 ---
 
-## 数値比較用演算子
+## Numeric Comparison Operator
 
-よく使うやつだけ書いてみた
+Only operator to frequent.
 
-* `==` 両辺が数値的に等しい場合、`true`
-* `!=` 両辺が数値的に等しくない場合、`true`
+* `==` Return `true` when lefthand side and righthand side is equal numerically.
+* `!=` Return `true` when lefthand side and righthand side is *not* equal numerically.
 
-* `>`  左辺が右辺より数値的に大きい場合、`true`
-* `>=` 左辺が数値的に右辺以上である場合、`true`
-* `<`  左辺が右辺より数値的に小さい場合、`true`
-* `<=` 左辺が数値的に右辺以下である場合、`true`
-
----
-
-## 文字列比較用演算子
-
-よく使うやつだけ書いてみた
-
-* `eq` 両辺が同じ文字列である場合、`true`
-* `ne` 両辺が違う文字列である場合、`true`
+* `>`  Return `true` when lefthand side is greater than righthand side numerically.
+* `>=` Return `true` when lefthand side is equal or greater than righthand side numerically.
+* `<`  Return `true` when lefthand side is lesser than righthand side numerically.
+* `<=` Return `true` when lefthand side is equal or lesser than righthand side numerically.
 
 ---
 
-## その他の演算子
+## String Comparison Operator
 
-よく使うやつだけ書いてみた
+Only operator to frequent.
 
-* `&&` AND演算。
-* `||` OR演算。
-* `!`  NOT演算。
+* `eq` Return `true` when lefthand side and righthand side is equal as string.
+* `ne` Return `true` when lefthand side and righthand side is *not* equal as string.
 
 ---
 
-# 7. 配列とループ
+## Logical Operator
 
-    use utf8;
-    binmode STDOUT, 'utf8';
-    
-    my @favlist = ('餃子', 'インドカレー', '生春巻き');
+Only operator to frequent.
+
+* `&&` AND operation
+* `||` OR operation
+* `!`  NOT operation
+
+---
+
+# 7. Array and Loop
+
+    my @favlist = ('Gyoza', 'Curry', 'Ramen');
     
     for my $fav ( @favlist ) {
-        print "僕は$favが好きです！\n";
+        print "MMmmmmmm, yummy! $fav is my favorite food!!!\n";
     }
 
-配列は`@`で始まる変数の一種で、複数の変数がまとめられたものであり、順番が保証されます。
+Array is a one of variable type that begin with `@`. It contains multiple variable, and their order is guaranteed. 
 
-なお、`@`は**配列であることをしめすシジル**です。
+And, `@` is a `sigil` that express array.
 
 ---
 
